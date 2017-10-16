@@ -1,0 +1,10 @@
+CREATE TABLE developers (id INT, name VARCHAR(100), specialization VARCHAR(100), experience VARCHAR(100), PRIMARY KEY (id));
+CREATE TABLE skills (id INT, name VARCHAR(100), PRIMARY KEY (id));
+CREATE TABLE projects (id INT, name VARCHAR(100), version VARCHAR(100), PRIMARY KEY (id));
+CREATE TABLE companies (id INT, name VARCHAR(100), PRIMARY KEY (id));
+CREATE TABLE customers (id INT, name VARCHAR(100), PRIMARY KEY (id));
+CREATE TABLE developers_skills (developer_id INT, skill_id INT, PRIMARY KEY (developer_id, skill_id));
+CREATE TABLE projects_developers (project_id INT, developer_id INT, PRIMARY KEY (project_id, developer_id));
+CREATE TABLE companies_projects (company_id INT, project_id INT, PRIMARY KEY (company_id, project_id));
+CREATE TABLE customers_projects (customer_id INT, project_id INT, PRIMARY KEY (customer_id, project_id));
+CREATE TABLE companies_projects_customers (company_id INT, project_id INT, customer_id INT, PRIMARY KEY (company_id, project_id, customer_id));
