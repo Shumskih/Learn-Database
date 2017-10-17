@@ -32,15 +32,15 @@ INSERT INTO customers (id, name) VALUES (4, 'Mikhail Glinka');
 INSERT INTO customers (id, name) VALUES (5, 'Aleksandr Pushkin');
 INSERT INTO customers (id, name) VALUES (6, 'Фёдор Достоевкий');
 
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (1, 1);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (2, 2);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (3, 6);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (4, 7);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (5, 3);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (5, 4);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (2, 5);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (1, 7);
-INSERT INTO developers_skills (developer_id, skills_id) VALUES (1, 3);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (1, 1);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (2, 2);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (3, 6);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (4, 7);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (5, 3);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (5, 4);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (2, 5);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (1, 7);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES (1, 3);
 
 INSERT INTO projects_developers (project_id, developer_id) VALUES (1, 1);
 INSERT INTO projects_developers (project_id, developer_id) VALUES (1, 5);
