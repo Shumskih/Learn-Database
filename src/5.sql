@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS profit, min_profit;
+DROP TABLE IF EXISTS first_table, second_table;
 
-CREATE TEMP TABLE profit AS (
+CREATE TEMP TABLE first_table AS (
   SELECT company_id AS company_id, customer_id AS customer_id, customers.name AS customer_name, projects.id, sum(projects.cost) AS sum
   FROM projects
     INNER JOIN companies_projects ON projects.id = companies_projects.project_id
@@ -10,14 +10,14 @@ CREATE TEMP TABLE profit AS (
 );
 
 
-CREATE TEMP TABLE min_profit AS (
+CREATE TEMP TABLE second_table AS (
   SELECT company_id, min(sum) AS min_cost
-  FROM profit
+  FROM first_table
   GROUP BY company_id
 );
 
 
-SELECT profit.customer_id, profit.company_id, profit.customer_name, profit.sum
-FROM profit
-  INNER JOIN min_profit ON profit.sum = min_profit.min_cost
-                           AND profit.company_id = min_profit.company_id
+SELECT first_table.customer_id, first_table.company_id, first_table.customer_name, first_table.sum
+FROM first_table
+  INNER JOIN second_table ON first_table.sum = second_table.min_cost
+                           AND first_table.company_id = second_table.company_id
