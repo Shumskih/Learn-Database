@@ -11,7 +11,7 @@ CREATE TEMP TABLE first_table AS (
 
 
 CREATE TEMP TABLE second_table AS (
-  SELECT company_id, min(sum) AS min_cost
+  SELECT company_id, min(sum) AS min_sum
   FROM first_table
   GROUP BY company_id
 );
@@ -19,5 +19,5 @@ CREATE TEMP TABLE second_table AS (
 
 SELECT first_table.customer_id, first_table.company_id, first_table.customer_name, first_table.sum
 FROM first_table
-  INNER JOIN second_table ON first_table.sum = second_table.min_cost
+  INNER JOIN second_table ON first_table.sum = second_table.min_sum
                            AND first_table.company_id = second_table.company_id
